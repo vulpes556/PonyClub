@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PonyClub.Ponies;
+using PonyClub.Ponies.Interfaces;
 
-namespace PonyClub
+
+//+Pegasus: Can fly - jump to any coordinate
+
+namespace PonyClub.Ponies
 {
     internal class Pegasus : Pony, IFly
     {
@@ -18,8 +23,8 @@ namespace PonyClub
             {
                 throw new ArgumentException("Already there!");
             }
-            this.Position = position;
-            return ($"Pegasus {Name} flew to {position.ToString()}");
+            Position = position;
+            return $"Pegasus {Name} flew to {position.ToString()}";
         }
     }
 }

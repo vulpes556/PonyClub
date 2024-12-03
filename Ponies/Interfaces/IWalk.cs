@@ -4,8 +4,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PonyClub.Enums;
 
-namespace PonyClub
+namespace PonyClub.Ponies.Interfaces
 {
     public interface IWalk
     {

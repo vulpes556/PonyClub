@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PonyClub
+namespace PonyClub.Ponies.Interfaces
 {
-    public enum Direction
+    public interface IFly
     {
-        North,
-        East,
-        South,
-        West,
+        public string Fly(Position position);
     }
 }

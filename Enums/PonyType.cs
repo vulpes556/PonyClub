@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PonyClub
+namespace PonyClub.Enums
 {
-    public interface IFly
+    public enum PonyType
     {
-        public string Fly(Position position);
+        Normal,
+        Pegasus,
+        Unicorn,
+        Super
     }
 }

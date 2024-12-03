@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PonyClub
+namespace PonyClub.Enums
 {
-    public enum PonyType
+    public enum Direction
     {
-        Normal,
-        Pegasus,
-        Unicorn,
-        Super
+        North,
+        East,
+        South,
+        West,
     }
 }

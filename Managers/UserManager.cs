@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PonyClub.Enums;
 
-namespace PonyClub
+
+//every user registering in august gets a free SuperPony
+
+namespace PonyClub.Managers
 {
     public class UserManager : IUserManager
     {

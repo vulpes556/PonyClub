@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PonyClub
+namespace PonyClub.Managers
 {
-    public interface IDoMagic
+    public interface IRandom
     {
-        public string DoMagic();
+        int Next(int max);
     }
 }

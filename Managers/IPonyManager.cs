@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PonyClub.Enums;
+using PonyClub.Ponies;
 
-namespace PonyClub
+namespace PonyClub.Managers
 {
     public interface IPonyManager
     {

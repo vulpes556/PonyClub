@@ -3,13 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PonyClub.Managers;
+using PonyClub.Ponies;
+using PonyClub.Ponies.Interfaces;
 
-namespace PonyClub
+
+
+//+SuperPony : Can do fly and magic
+
+namespace PonyClub.Ponies
 {
     public class SuperPony : Pony, IFly, IDoMagic
     {
-        public SuperPony(string name, Position position) : base(name, position)
+        private readonly IRandom _random;
+        public SuperPony(string name, Position position, IRandom random) : base(name, position)
         {
+            _random = random;
         }
 
 
@@ -17,10 +26,8 @@ namespace PonyClub
 
         public string DoMagic()
         {
-            Random random = new Random(); //not sure if this random should be created here or passed somehow
-
             string[] appendables = new string[] { "*", "#", "&" };
-            Name = Name + appendables[random.Next(appendables.Length)];
+            Name = Name + appendables[_random.Next(appendables.Length)];
 
             Level++;
 
@@ -33,8 +40,8 @@ namespace PonyClub
             {
                 throw new ArgumentException("Already there!");
             }
-            this.Position = position;
-            return ($"Pegasus {Name} flew to {position.ToString()}");
+            Position = position;
+            return $"Pegasus {Name} flew to {position.ToString()}";
         }
     }
 }

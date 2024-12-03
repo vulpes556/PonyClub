@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PonyClub.Enums;
+using PonyClub.Managers.PosCreator;
+using PonyClub.Ponies;
 
-namespace PonyClub
+namespace PonyClub.Managers
 {
     public class PonyManager : IPonyManager
     {
@@ -24,7 +27,7 @@ namespace PonyClub
 
         public SuperPony GetRandomSuperPony()
         {
-            return new SuperPony(_superponyNames[_random.Next(_superponyNames.Length)], _positionCreator.GetDefaultPosition());
+            return new SuperPony(_superponyNames[_random.Next(_superponyNames.Length)], _positionCreator.GetDefaultPosition(), _random);
         }
 
 
@@ -56,13 +59,13 @@ namespace PonyClub
                     }
                 case PonyType.Unicorn:
                     {
-                        Unicorn unicorn = new Unicorn(name, defaultPosition);
+                        Unicorn unicorn = new Unicorn(name, defaultPosition, _random); //the unicorns and super ponies needs some random numbers when they are created, so they get a random generator object
                         Ponies.Add(unicorn);
                         return unicorn;
                     }
                 case PonyType.Super:
                     {
-                        SuperPony super = new SuperPony(name, defaultPosition);
+                        SuperPony super = new SuperPony(name, defaultPosition, _random);
                         Ponies.Add(super);
                         return super;
                     }
